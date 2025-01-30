@@ -12,12 +12,17 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 20px; /* Add padding to ensure whitespace around content */
             background-color: #f4f4f4;
             font-family: Arial, sans-serif;
         }
         img, a {
             opacity: 0;
             animation: fadeInLogo 2s ease forwards;
+        }
+        img {
+            max-width: 90%; /* Ensure logo does not exceed 90% of the viewport width */
+            height: auto; /* Maintain aspect ratio */
         }
         a {
             animation-delay: 2.5s; /* Delay this animation so it starts after the logo */
@@ -35,7 +40,7 @@
 </head>
 <body>
     <a href="mailto:info@haverhillbel.com">
-        <img src="HaverhillLogov1.png" alt="Haverhill Logo">
+        <img src="HaverhillLogov1.png" alt="My Logo">
     </a>
     <a href="mailto:info@haverhillbel.com">Contact Us</a>
 </body>
