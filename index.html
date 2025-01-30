@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%; margin: 0; padding: 0;"> <!-- Reset margin and padding on html -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,12 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: calc(100vh - 40px); /* Subtract the total vertical padding from the viewport height */
             margin: 0;
-            padding: 20px; /* Add padding to ensure whitespace around content */
+            padding: 20px; /* Maintain padding but adjust body height */
             background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            box-sizing: border-box; /* Include padding in the height calculation */
         }
         img, a {
             opacity: 0;
@@ -25,7 +26,7 @@
             height: auto; /* Maintain aspect ratio */
         }
         a {
-            animation-delay: 2.5s; /* Delay this animation so it starts after the logo */
+            animation-delay: 1.5s; /* Delay this animation so it starts after the logo */
             font-size: 20px;
             text-decoration: none;
             color: #000; /* Basic black for text */
