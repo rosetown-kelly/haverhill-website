@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%; margin: 0; padding: 0;"> <!-- Reset margin and padding on html -->
+<html lang="en" style="height: 100%; margin: 0; padding: 0;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,41 +8,114 @@
         body {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            height: calc(100vh - 40px); /* Subtract the total vertical padding from the viewport height */
+            min-height: 100vh;
             margin: 0;
-            padding: 20px; /* Maintain padding but adjust body height */
+            padding: 20px;
             background-color: #f4f4f4;
             font-family: Arial, sans-serif;
-            box-sizing: border-box; /* Include padding in the height calculation */
+            box-sizing: border-box;
         }
+
         img, a {
             opacity: 0;
             animation: fadeInLogo 2s ease forwards;
         }
+
         img {
-            max-width: 90%; /* Ensure logo does not exceed 90% of the viewport width */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 90%;
+            height: auto;
         }
+
         a {
-            animation-delay: 1.5s; /* Delay this animation so it starts after the logo */
+            animation-delay: 1.5s;
             font-size: 20px;
             text-decoration: none;
-            color: #000; /* Basic black for text */
+            color: #000;
             margin-top: 20px;
         }
+
         @keyframes fadeInLogo {
             to {
                 opacity: 1;
             }
         }
+
+        /* Listings Section */
+        .listings-container {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 40px;
+            animation: fadeInLogo 2s ease forwards;
+            opacity: 0;
+        }
+
+        .listing-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .listing-card img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .listing-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 22px;
+        }
+
+        .listing-info p {
+            margin: 5px 0;
+        }
+
+        .listing-info a {
+            font-size: 16px;
+            color: #0066cc;
+            margin-top: 10px;
+            display: inline-block;
+            animation: none;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
-    <a href="mailto:info@haverhillbel.com">
-        <img src="HaverhillLogov1.png" alt="My Logo">
-    </a>
-    <a href="mailto:info@haverhillbel.com">Contact Us</a>
+    <!-- Navigation Bar -->
+    <nav style="width:100%; display:flex; justify-content:space-between; align-items:center; padding:10px 20px; background:white; box-shadow:0 2px 6px rgba(0,0,0,0.1); position:fixed; top:0; left:0; box-sizing:border-box; z-index:1000;">
+        <a href="index.html" style="animation:none; opacity:1; margin:0; display:flex; align-items:center;">
+            <img src="HaverhillLogov1.png" alt="My Logo" style="max-width:140px; height:auto; animation:none; opacity:1;">
+        </a>
+        <a href="mailto:info@haverhillbel.com" style="font-size:18px; animation:none; opacity:1; margin:0; white-space:nowrap;">Contact Us</a>
+    </nav>
+
+    <!-- Spacer so content isn't hidden behind fixed navbar -->
+    <div style="height:120px;"></div>
+    
+
+    <!-- Current Listings Section -->
+    <div class="listings-container">
+        <h2>Current Listings</h2>
+
+        <div class="listing-card">
+            <img src="barrhead-photo.jpg" alt="Listing Photo">
+            <div class="listing-info">
+                <h3>Barrhead - Former Alberta Transportation Building</h3>
+                <p>4513 62 AV, Barrhead, Alberta</p>
+                <p>Square Footage: 6,600 sq ft</p>
+                <p>Type: Commercial</p>
+                <a href="listing1.html">View Full Details →</a>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
