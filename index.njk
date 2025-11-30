@@ -1,0 +1,117 @@
+---
+layout: layouts/base.njk
+title: Home
+pageStyles: |
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    img, a {
+      opacity: 0;
+      animation: fadeInLogo 2s ease forwards;
+    }
+
+    img {
+      max-width: 90%;
+      height: auto;
+    }
+
+    a {
+      animation-delay: 1.5s;
+      font-size: 20px;
+      text-decoration: none;
+      color: #000;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeInLogo {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .listings-container {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 40px;
+      animation: fadeInLogo 2s ease forwards;
+      opacity: 0;
+    }
+
+    .listing-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .listing-card img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .listing-info h3 {
+      margin: 0 0 10px 0;
+      font-size: 22px;
+    }
+
+    .listing-info p {
+      margin: 5px 0;
+    }
+
+    .listing-info a {
+      font-size: 16px;
+      color: #0066cc;
+      margin-top: 10px;
+      display: inline-block;
+      animation: none;
+      opacity: 1;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background-color: #e0f0ff;
+      color: #004a99;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .nav-spacer {
+      height: 120px;
+    }
+  </style>
+---
+
+<div class="nav-spacer"></div>
+
+<div class="listings-container">
+  <h2>Haverhill's Current Listings</h2>
+
+  <div class="listing-card">
+    <img src="/main-photo-new1.jpg" alt="Listing Photo">
+    <div class="listing-info">
+      <h3>Barrhead - Former Alberta Transportation Building</h3>
+      <p>4513 62 AV, Barrhead, Alberta</p>
+      <span class="status">For Lease or Sale</span>
+      <p>Square Footage: 6,600 sq ft</p>
+      <p>Type: Commercial (M1 Zoning)</p>
+      <a href="/barrhead-listing/">View Full Details →</a>
+    </div>
+  </div>
+</div>
