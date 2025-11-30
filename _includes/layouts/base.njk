@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%; margin: 0; padding: 0;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} – Haverhill{% else %}Haverhill Business Enterprises Ltd{% endif %}</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+
+  <style>
+    /* Global styles shared across pages */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+
+    /* Nav bar */
+    .site-nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      z-index: 1000;
+    }
+
+    .site-nav__logo img {
+      max-width: 250px;
+      height: auto;
+      display: block;
+    }
+
+    .site-nav__contact-link {
+      font-size: 18px;
+      text-decoration: none;
+      color: #000;
+      white-space: nowrap;
+    }
+
+    /* Each page can add its own extra CSS below */
+  </style>
+
+  {# Page-specific styles will be injected here if provided #}
+  {% if pageStyles %}
+    {{ pageStyles | safe }}
+  {% endif %}
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/" class="site-nav__logo">
+      <img src="/HaverhillLogov1.png" alt="Haverhill Logo">
+    </a>
+    <a href="mailto:info@haverhillbel.com" class="site-nav__contact-link">Contact Us</a>
+  </nav>
+
+  <main>
+    {{ content | safe }}
+  </main>
+</body>
+</html>
